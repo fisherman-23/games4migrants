@@ -31,7 +31,9 @@ class FeedbackPage extends StatelessWidget {
               title: Text(
                 "Feedback",
                 style: TextStyle(
-                    color: Colors.black, fontFamily: 'Helvetica', fontSize: 29),
+                    color: Colors.black,
+                    fontFamily: 'ProductSansBold',
+                    fontSize: 29),
               ),
             ),
             body: Container(
@@ -42,7 +44,7 @@ class FeedbackPage extends StatelessWidget {
                     'We want to give you the best possible experience. As such, we need your feedback, if you have any, kindly fill in the form below. Thank you!',
                     style: TextStyle(
                         color: Colors.black,
-                        fontFamily: 'HelveticaRegular',
+                        fontFamily: 'ProductSans',
                         fontSize: 20),
                   ),
                   SizedBox(
@@ -53,7 +55,7 @@ class FeedbackPage extends StatelessWidget {
                       "Feedback Form",
                       style: TextStyle(
                           color: Colors.blue,
-                          fontFamily: 'HelveticaRegular',
+                          fontFamily: 'ProductSans',
                           fontSize: 20),
                     ),
                     onTap: () =>

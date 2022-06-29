@@ -60,7 +60,8 @@ class ImageCard extends StatelessWidget {
                 left: 16,
                 child: Text(titleText,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 18, fontFamily: 'Helvetica')),
+                    style:
+                        TextStyle(fontSize: 18, fontFamily: 'ProductSansBold')),
               )
             ],
           ),
@@ -99,7 +100,7 @@ class ImageCard2 extends StatelessWidget {
                 left: 16,
                 child: Text(titleText,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 18, fontFamily: 'Helvetica')),
+                    style: TextStyle(fontSize: 18, fontFamily: 'H')),
               )
             ],
           ),

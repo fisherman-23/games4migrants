@@ -39,14 +39,14 @@ class InfoOfGames extends StatelessWidget {
                   titleText,
                   style: TextStyle(
                       color: Colors.black,
-                      fontFamily: "Helvetica",
+                      fontFamily: "ProductSansBold",
                       fontSize: 25),
                 ),
                 Text(
                   desc,
                   style: TextStyle(
                       color: Colors.black,
-                      fontFamily: "HelveticaRegular",
+                      fontFamily: "ProductSans",
                       fontSize: 20),
                 ),
                 SizedBox(
@@ -64,23 +64,28 @@ class InfoOfGames extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 214, 212, 212),
+                      color: Color.fromARGB(255, 54, 167, 77),
                       borderRadius: BorderRadius.all(
-                        Radius.circular(45.0),
+                        Radius.circular(15.0),
                       ),
                     ),
                     child: TextButton.icon(
-                        icon: Icon(Icons.play_arrow),
+                        icon: Icon(
+                          Icons.play_arrow,
+                          color: Colors.white,
+                        ),
                         onPressed: () async {
                           if (await canLaunch(pdfLink)) {
                             await launch(pdfLink, forceSafariVC: false);
                           }
-
                           print('pressed');
                         },
                         label: Text(
                           "Play Now",
-                          style: TextStyle(fontSize: 23),
+                          style: TextStyle(
+                              fontSize: 23,
+                              fontFamily: 'ProductSansBold',
+                              color: Colors.white),
                         ))),
               ]),
             ));

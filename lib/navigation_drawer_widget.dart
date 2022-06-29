@@ -19,7 +19,9 @@ class NavigationDrawerWidget extends StatelessWidget {
             Text(
               "Games 4 Migrants",
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'Helvetica', fontSize: 30),
+                  color: Colors.black,
+                  fontFamily: 'ProductSansBold',
+                  fontSize: 30),
             ),
             SizedBox(height: 20),
             buildMenuItem(
@@ -55,9 +57,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       leading: Icon(icon, color: color),
       title: Text(text,
           style: TextStyle(
-              fontFamily: "HelveticaRegular",
-              fontSize: 20,
-              color: Colors.black)),
+              fontFamily: "ProductSans", fontSize: 20, color: Colors.black)),
       hoverColor: hoverColor,
       onTap: onClicked,
     );

@@ -85,7 +85,9 @@ class MyApp extends StatelessWidget {
               title: Text(
                 "Browse Games",
                 style: TextStyle(
-                    color: Colors.black, fontFamily: 'Helvetica', fontSize: 29),
+                    color: Colors.black,
+                    fontFamily: 'ProductSansBold',
+                    fontSize: 29),
               ),
             ),
             body: Container(
@@ -104,7 +106,7 @@ class MyApp extends StatelessWidget {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 23,
-                                fontFamily: 'Helvetica',
+                                fontFamily: 'ProductSans',
                                 color: Colors.black)),
                         StreamBuilder<List<FirebaseData>>(
                             stream: gotwData(),
@@ -144,7 +146,7 @@ class MyApp extends StatelessWidget {
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontSize: 23,
-                              fontFamily: 'Helvetica',
+                              fontFamily: 'ProductSans',
                               color: Colors.black),
                         ),
                         StreamBuilder<List<FirebaseData>>(
@@ -185,7 +187,7 @@ class MyApp extends StatelessWidget {
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontSize: 23,
-                              fontFamily: 'Helvetica',
+                              fontFamily: 'ProductSans',
                               color: Colors.black),
                         ),
                         StreamBuilder<List<FirebaseData>>(
