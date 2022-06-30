@@ -4,6 +4,7 @@ import 'package:g4m_website/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_storage_web/firebase_storage_web.dart';
 import 'package:ndialog/ndialog.dart';
+import 'package:flutter/cupertino.dart';
 
 class InfoOfGames extends StatelessWidget {
   //when card press, it will show this widget
@@ -62,15 +63,16 @@ class InfoOfGames extends StatelessWidget {
                 SizedBox(
                     child: InkWell(
                         onTap: () {
-                          NAlertDialog(
-                            title: Text(
-                              titleText,
-                              style: TextStyle(fontFamily: 'ProductSansBold'),
-                            ),
-                            content: Image.network(preview),
-                            blur: 2,
-                          ).show(context,
-                              transitionType: DialogTransitionType.Bubble);
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  insetPadding: EdgeInsets.zero,
+                                  content: Image.network(preview),
+                                  contentPadding:
+                                      EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                );
+                              });
                         },
                         child: Image.network(preview,
                             height: 150,
