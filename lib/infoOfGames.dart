@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:g4m_website/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_storage_web/firebase_storage_web.dart';
+import 'package:ndialog/ndialog.dart';
 
 class InfoOfGames extends StatelessWidget {
   //when card press, it will show this widget
@@ -27,9 +28,9 @@ class InfoOfGames extends StatelessWidget {
     final deviceWidth = data.size.shortestSide;
     final deviceHeight = data.size.longestSide;
     return DraggableScrollableSheet(
-        initialChildSize: 0.55,
-        maxChildSize: 0.6,
-        minChildSize: 0.45,
+        initialChildSize: 0.57,
+        maxChildSize: 0.72,
+        minChildSize: 0.47,
         expand: false,
         builder: (_, controller) => Container(
               width: deviceWidth,
@@ -52,20 +53,41 @@ class InfoOfGames extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
+                Center(
+                    child: Text(
+                  "tap to enlarge",
+                  style: TextStyle(
+                      color: Colors.black54, fontFamily: 'ProductSans'),
+                )),
                 SizedBox(
-                    child: Image.network(preview,
-                        height: 150, fit: BoxFit.contain, frameBuilder:
-                            (context, child, frame, wasSynchronouslyLoaded) {
-                  return child;
-                }, loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) {
-                    return child;
-                  } else {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                })),
+                    child: InkWell(
+                        onTap: () {
+                          NAlertDialog(
+                            title: Text(
+                              titleText,
+                              style: TextStyle(fontFamily: 'ProductSansBold'),
+                            ),
+                            content: Image.network(preview),
+                            blur: 2,
+                          ).show(context,
+                              transitionType: DialogTransitionType.Bubble);
+                        },
+                        child: Image.network(preview,
+                            height: 150,
+                            fit: BoxFit.contain, frameBuilder: (context, child,
+                                frame, wasSynchronouslyLoaded) {
+                          return child;
+                        }, loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) {
+                            return child;
+                          } else {
+                            return Center(
+                              child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.red)),
+                            );
+                          }
+                        }))),
                 SizedBox(
                   height: 10,
                 ),
