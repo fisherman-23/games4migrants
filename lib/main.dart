@@ -5,7 +5,6 @@ import 'package:g4m_website/firebaseData.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:ui';
 import 'package:g4m_website/main.dart';
-import 'package:aurora/aurora.dart';
 import 'package:g4m_website/navigation_drawer_widget.dart';
 
 void main() async {

@@ -53,11 +53,19 @@ class InfoOfGames extends StatelessWidget {
                   height: 10,
                 ),
                 SizedBox(
-                    child: Ink.image(
-                  image: NetworkImage(preview),
-                  height: 150,
-                  fit: BoxFit.contain,
-                )),
+                    child: Image.network(preview,
+                        height: 150, fit: BoxFit.contain, frameBuilder:
+                            (context, child, frame, wasSynchronouslyLoaded) {
+                  return child;
+                }, loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                })),
                 SizedBox(
                   height: 10,
                 ),
