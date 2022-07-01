@@ -30,41 +30,41 @@ class ImageCard extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Ink.image(
-                image: NetworkImage(imageURL),
-                height: 240,
-                fit: BoxFit.cover,
-                child: InkWell(onTap: () async {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      backgroundColor: Color.fromARGB(231, 255, 255, 255),
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(24))),
-                      context: context,
-                      builder: (context) => InfoOfGames(
-                          titleText: titleText,
-                          desc: desc,
-                          pdfLink: pdfLink,
-                          imageURL: imageURL,
-                          gameid: gameid,
-                          preview: preview));
-                }),
-              ),
-              Positioned(
-                bottom: 16,
-                right: 16,
-                left: 16,
-                child: Text(titleText,
-                    textAlign: TextAlign.left,
-                    style:
-                        TextStyle(fontSize: 18, fontFamily: 'ProductSansBold')),
-              )
-            ],
-          ),
+          child: InkWell(
+              onTap: () async {
+                showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Color.fromARGB(231, 255, 255, 255),
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(24))),
+                    context: context,
+                    builder: (context) => InfoOfGames(
+                        titleText: titleText,
+                        desc: desc,
+                        pdfLink: pdfLink,
+                        imageURL: imageURL,
+                        gameid: gameid,
+                        preview: preview));
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Ink.image(
+                      image: NetworkImage(imageURL),
+                      height: 240,
+                      fit: BoxFit.cover),
+                  Positioned(
+                    bottom: 16,
+                    right: 16,
+                    left: 16,
+                    child: Text(titleText,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            fontSize: 18, fontFamily: 'ProductSansBold')),
+                  )
+                ],
+              )),
         ));
   }
 }

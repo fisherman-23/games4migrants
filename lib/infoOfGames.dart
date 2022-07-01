@@ -63,16 +63,15 @@ class InfoOfGames extends StatelessWidget {
                 SizedBox(
                     child: InkWell(
                         onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  insetPadding: EdgeInsets.zero,
-                                  content: Image.network(preview),
-                                  contentPadding:
-                                      EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                );
-                              });
+                          DialogBackground(
+                            dialog: AlertDialog(
+                              content: Image.network(preview),
+                              contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              insetPadding: EdgeInsets.zero,
+                            ),
+                            blur: 2,
+                          ).show(context,
+                              transitionType: DialogTransitionType.Bubble);
                         },
                         child: Image.network(preview,
                             height: 150,
