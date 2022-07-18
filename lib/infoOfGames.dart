@@ -71,7 +71,7 @@ class InfoOfGames extends StatelessWidget {
                             ),
                             blur: 2,
                           ).show(context,
-                              transitionType: DialogTransitionType.Bubble);
+                              transitionType: DialogTransitionType.BottomToTop);
                         },
                         child: Image.network(preview,
                             height: 150,
