@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:g4m_website/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_storage_web/firebase_storage_web.dart';
-import 'package:ndialog/ndialog.dart';
 import 'package:flutter/cupertino.dart';
 
 class InfoOfGames extends StatelessWidget {
@@ -61,34 +60,46 @@ class InfoOfGames extends StatelessWidget {
                       color: Colors.black54, fontFamily: 'ProductSans'),
                 )),
                 SizedBox(
-                    child: InkWell(
-                        onTap: () {
-                          DialogBackground(
-                            dialog: AlertDialog(
-                              content: Image.network(preview),
-                              contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              insetPadding: EdgeInsets.zero,
-                            ),
-                            blur: 2,
-                          ).show(context,
-                              transitionType: DialogTransitionType.BottomToTop);
-                        },
-                        child: Image.network(preview,
-                            height: 150,
-                            fit: BoxFit.contain, frameBuilder: (context, child,
-                                frame, wasSynchronouslyLoaded) {
-                          return child;
-                        }, loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) {
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                          onTap: () {
+                            showGeneralDialog(
+                                barrierColor: Colors.black
+                                    .withOpacity(0.5), //SHADOW EFFECT
+                                transitionBuilder: (context, a1, a2, widget) {
+                                  return Center(
+                                      child: Image.network(
+                                    preview,
+                                    width: deviceWidth * a1.value,
+                                  ));
+                                },
+                                transitionDuration: Duration(
+                                    milliseconds: 55), // DURATION FOR ANIMATION
+                                barrierDismissible: true,
+                                barrierLabel: 'LABEL',
+                                context: context,
+                                pageBuilder: (context, animation1, animation2) {
+                                  return Text('PAGE BUILDER');
+                                });
+                          },
+                          child: (Image.network(preview,
+                              height: 150,
+                              fit: BoxFit.contain, frameBuilder: (context,
+                                  child, frame, wasSynchronouslyLoaded) {
                             return child;
-                          } else {
-                            return Center(
-                              child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                      Colors.red)),
-                            );
-                          }
-                        }))),
+                          }, loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) {
+                              return child;
+                            } else {
+                              return Center(
+                                child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.red)),
+                              );
+                            }
+                          })))),
+                ),
                 SizedBox(
                   height: 10,
                 ),
