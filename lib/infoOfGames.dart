@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:g4m_website/main.dart';
@@ -25,8 +26,8 @@ class InfoOfGames extends StatelessWidget {
       : super(key: key);
   Widget build(BuildContext context) {
     final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
-    final deviceWidth = data.size.shortestSide;
-    final deviceHeight = data.size.longestSide;
+    final deviceWidth = data.size.width;
+    final deviceHeight = data.size.height;
     return DraggableScrollableSheet(
         initialChildSize: 0.57,
         maxChildSize: 0.72,
