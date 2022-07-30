@@ -56,9 +56,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
-    final deviceWidth = data.size.shortestSide;
-    final deviceHeight = data.size.longestSide;
-
+    final deviceWidth = data.size.width;
+    final deviceHeight = data.size.height;
+    print(deviceWidth);
+    print(deviceHeight);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark()
