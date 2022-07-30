@@ -44,6 +44,16 @@ class InfoPage extends StatelessWidget {
                         color: Colors.black,
                         fontFamily: 'ProductSans',
                         fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "This website is optimised for a clean and smooth mobile viewing experience, viewing on larger screens like on a computer might cause problems.",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'ProductSans',
+                        fontSize: 20),
                   )
                 ],
               ),
