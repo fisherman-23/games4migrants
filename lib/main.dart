@@ -141,7 +141,7 @@ class MyApp extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          ' Website Games',
+                          ' Card Games',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontSize: 23,
@@ -182,7 +182,7 @@ class MyApp extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          ' PDF Games',
+                          ' Crossword Puzzles',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontSize: 23,
