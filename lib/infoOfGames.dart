@@ -28,6 +28,7 @@ class InfoOfGames extends StatelessWidget {
     final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
     final deviceWidth = data.size.width;
     final deviceHeight = data.size.height;
+    print(deviceWidth);
     return DraggableScrollableSheet(
         initialChildSize: 0.57,
         maxChildSize: 0.72,
@@ -72,7 +73,6 @@ class InfoOfGames extends StatelessWidget {
                                   return Center(
                                       child: Image.network(
                                     preview,
-                                    width: deviceWidth * a1.value,
                                   ));
                                 },
                                 transitionDuration: Duration(
