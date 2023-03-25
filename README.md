@@ -1,6 +1,6 @@
 # g4m_website
 
-This is a website developed specifically for the partnership betweeen SST and the Migrant Workers Community in Singapore
+This is a website developed specifically for the partnership betweeen SST and the Migrant Workers Community in Singapore. This project helps bridge the gap between the migrant workers in Singapore and the Singapore community in general by providing an easy way for them to understand our culture.
 
 ## Overview
 
